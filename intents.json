@@ -113,7 +113,7 @@
         "Hostel fees and facilities",
         "Does ACE have a hostel?"
       ],
-      "responses": [
+      "responses":[
         "Yes, ACE offers separate hostel facilities for male and female students with good amenities. Learn more here: <a href='https://www.aceec.ac.in/hostel-and-auditorium/' target='_blank'>Hostel and Auditorium</a>."
       ]
     },
