@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACEBot - Your College Assistant</title>
+  <link rel="icon" href="https://www.aceec.ac.in/wp-content/uploads/2021/03/cropped-ACE-LOGO-180x180.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3a0ca3;
+      --accent: #f72585;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #4cc9f0;
+      --warning: #f8961e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      color: var(--dark);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-right: 1rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    .title {
+      color: var(--secondary);
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .subtitle {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-top: 0.2rem;
+    }
+
+    .chat-container {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 33, 71, 0.1);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .chat-header {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .chat-header i {
+      margin-right: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .chat-header h3 {
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    #chat {
+      height: 400px;
+      padding: 1.2rem;
+      overflow-y: auto;
+      background: url('https://www.transparenttextures.com/patterns/light-wool.png');
+    }
+
+    .message {
+      margin-bottom: 1rem;
+      max-width: 80%;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      position: relative;
+      line-height: 1.4;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .user-message {
+      background-color: var(--primary);
+      color: white;
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+
+    .bot-message {
+      background-color: #f1f3f9;
+      color: var(--dark);
+      margin-right: auto;
+      border-bottom-left-radius: 4px;
+    }
+
+    .message-sender {
+      font-weight: 600;
+      font-size: 0.75rem;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .user-message .message-sender {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .bot-message .message-sender {
+      color: var(--primary);
+    }
+
+    .typing {
+      display: flex;
+      align-items: center;
+      color: #777;
+      font-style: italic;
+      margin: 0.5rem 0;
+    }
+
+    .typing-dots {
+      display: flex;
+      margin-left: 0.5rem;
+    }
+
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #777;
+      border-radius: 50%;
+      margin: 0 2px;
+      animation: typingAnimation 1.4s infinite ease-in-out;
+    }
+
+    .typing-dot:nth-child(1) { animation-delay: 0s; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    .input-container {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0, 33, 71, 0.1);
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    #userInput {
+      flex: 1;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+      background: transparent;
+    }
+
+    #sendButton {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      padding: 0 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #sendButton:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    .footer {
+      margin-top: 2rem;
+      color: #666;
+      font-size: 0.8rem;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes typingAnimation {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-5px); }
+    }
+
+    /* Scrollbar styling */
+    #chat::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    #chat::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    #chat::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .title {
+        font-size: 1.5rem;
+      }
+      
+      .chat-container {
+        border-radius: 12px;
+      }
+      
+      #chat {
+        height: 350px;
+        padding: 1rem;
+      }
+      
+      .message {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1 class="title">ACEBot</h1>
+      <p class="subtitle">Your virtual college assistant</p>
+    </div>
+  </div>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      <i class="fas fa-robot"></i>
+      <h3>Ask me anything about ACE Engineering College</h3>
+    </div>
+    <div id="chat"></div>
+  </div>
+
+  <div class="input-container">
+    <input type="text" id="userInput" placeholder="Type your question here..." autocomplete="off">
+    <button id="sendButton" onclick="sendMessage()">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 <a href="https://www.aceec.ac.in" target="_blank">ACE Engineering College</a> | Powered by ACEBot AI</p>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      let input = document.getElementById("userInput").value.trim();
+      if (input === "") return;
+
+      const chatBox = document.getElementById("chat");
+      
+      // Add user message
+      const userMessage = document.createElement("div");
+      userMessage.className = "message user-message";
+      userMessage.innerHTML = `
+        <span class="message-sender">You</span>
+        ${input}
+      `;
+      chatBox.appendChild(userMessage);
+      
+      document.getElementById("userInput").value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      // Add typing indicator
+      const typingEl = document.createElement("div");
+      typingEl.className = "typing";
+      typingEl.id = "typing";
+      typingEl.innerHTML = `
+        ACEBot is typing
+        <div class="typing-dots">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      `;
+      chatBox.appendChild(typingEl);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      try {
+        const response = await fetch("/get", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: input })
+        });
+
+        const data = await response.json();
+        document.getElementById("typing").remove();
+        
+        // Add bot response
+        const botMessage = document.createElement("div");
+        botMessage.className = "message bot-message";
+        botMessage.innerHTML = `
+          <span class="message-sender">ACEBot</span>
+          ${data.response}
+        `;
+        chatBox.appendChild(botMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      } catch (error) {
+        document.getElementById("typing").remove();
+        
+        const errorMessage = document.createElement("div");
+        errorMessage.className = "message bot-message";
+        errorMessage.innerHTML = `
+          <span class="message-sender">ACEBot</span>
+          Sorry, I'm having trouble connecting right now. Please try again later.
+        `;
+        chatBox.appendChild(errorMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+
+    window.onload = function() {
+      // Add welcome message
+      const chatBox = document.getElementById("chat");
+      const welcomeMessage = document.createElement("div");
+      welcomeMessage.className = "message bot-message";
+      welcomeMessage.innerHTML = `
+        <span class="message-sender">ACEBot</span>
+        Hello! I'm ACEBot, your virtual assistant for ACE Engineering College. 
+        How can I help you today? You can ask about admissions, courses, 
+        faculty, facilities, or anything else about our college.
+      `;
+      chatBox.appendChild(welcomeMessage);
+      
+      // Set up event listeners
+      document.getElementById("userInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          sendMessage();
+        }
+      });
+      
+      // Focus input field
+      document.getElementById("userInput").focus();
+    };
+  </script>
+</body>
+</html>

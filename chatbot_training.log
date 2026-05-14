@@ -1,0 +1,79 @@
+2025-05-30 21:50:44,880 - INFO - 
+Dataset Analysis:
+2025-05-30 21:50:44,880 - INFO - Total samples: 94
+2025-05-30 21:50:44,880 - INFO - Number of classes: 21
+2025-05-30 21:50:44,880 - INFO - Class distribution:
+2025-05-30 21:50:44,880 - INFO -   college_holidays: 11 samples
+2025-05-30 21:50:44,880 - INFO -   greeting: 6 samples
+2025-05-30 21:50:44,880 - INFO -   college_timings: 5 samples
+2025-05-30 21:50:44,896 - INFO -   canteen: 5 samples
+2025-05-30 21:50:44,896 - INFO -   wifi_availability: 5 samples
+2025-05-30 21:50:44,896 - INFO -   library_timings: 5 samples
+2025-05-30 21:50:44,896 - INFO -   ragging_policy: 5 samples
+2025-05-30 21:50:44,896 - INFO -   courses: 4 samples
+2025-05-30 21:50:44,896 - INFO -   admission: 4 samples
+2025-05-30 21:50:44,896 - INFO -   contact: 4 samples
+2025-05-30 21:50:44,896 - INFO -   placements: 4 samples
+2025-05-30 21:50:44,896 - INFO -   goodbye: 4 samples
+2025-05-30 21:50:44,911 - INFO -   transport: 4 samples
+2025-05-30 21:50:44,911 - INFO -   hostel: 4 samples
+2025-05-30 21:50:44,911 - INFO -   scholarships: 4 samples
+2025-05-30 21:50:44,911 - INFO -   exam_info: 4 samples
+2025-05-30 21:50:44,911 - INFO -   internships: 4 samples
+2025-05-30 21:50:44,911 - INFO -   fees: 3 samples
+2025-05-30 21:50:44,911 - INFO -   location: 3 samples
+2025-05-30 21:50:44,911 - INFO -   facilities: 3 samples
+2025-05-30 21:50:44,911 - INFO -   about: 3 samples
+2025-05-30 21:50:44,927 - WARNING - Adjusted test size from 20% to 30% to ensure at least 2 samples per class
+2025-05-30 21:50:44,927 - INFO - Train samples: 65, Test samples: 29
+2025-05-30 21:50:44,942 - INFO - 
+Training Logistic Regression...
+2025-05-30 21:50:48,612 - INFO - Logistic Regression Results:
+2025-05-30 21:50:48,612 - INFO -   Accuracy: 0.6207
+2025-05-30 21:50:48,628 - INFO -   F1 Score: 0.5534
+2025-05-30 21:50:48,628 - INFO -   Best Params: {'classifier__C': 10, 'classifier__class_weight': None, 'classifier__solver': 'liblinear'}
+2025-05-30 21:50:48,628 - INFO - 
+Training Multinomial NB...
+2025-05-30 21:50:48,706 - INFO - Multinomial NB Results:
+2025-05-30 21:50:48,706 - INFO -   Accuracy: 0.3793
+2025-05-30 21:50:48,706 - INFO -   F1 Score: 0.3261
+2025-05-30 21:50:48,706 - INFO -   Best Params: {'classifier__alpha': 0.1}
+2025-05-30 21:50:48,706 - INFO - 
+Training Linear SVC...
+2025-05-30 21:50:48,831 - INFO - Linear SVC Results:
+2025-05-30 21:50:48,831 - INFO -   Accuracy: 0.6897
+2025-05-30 21:50:48,831 - INFO -   F1 Score: 0.6086
+2025-05-30 21:50:48,831 - INFO -   Best Params: {'classifier__C': 1, 'classifier__class_weight': None}
+2025-05-30 21:50:48,894 - INFO - 
+Classification Report:
+                   precision    recall  f1-score   support
+
+            about       0.00      0.00      0.00         1
+        admission       1.00      1.00      1.00         1
+          canteen       1.00      1.00      1.00         2
+ college_holidays       0.60      1.00      0.75         3
+  college_timings       0.33      0.50      0.40         2
+          contact       1.00      1.00      1.00         1
+          courses       0.00      0.00      0.00         1
+        exam_info       0.00      0.00      0.00         1
+       facilities       0.00      0.00      0.00         1
+             fees       0.50      1.00      0.67         1
+          goodbye       0.00      0.00      0.00         1
+         greeting       0.50      1.00      0.67         2
+           hostel       1.00      1.00      1.00         1
+      internships       1.00      1.00      1.00         1
+  library_timings       1.00      1.00      1.00         2
+         location       0.00      0.00      0.00         1
+       placements       0.00      0.00      0.00         1
+   ragging_policy       1.00      1.00      1.00         2
+     scholarships       0.00      0.00      0.00         1
+        transport       1.00      1.00      1.00         1
+wifi_availability       0.67      1.00      0.80         2
+
+         accuracy                           0.69        29
+        macro avg       0.50      0.60      0.54        29
+     weighted avg       0.56      0.69      0.61        29
+
+2025-05-30 21:50:48,894 - INFO - 
+Training final model on all data...
+2025-05-30 21:50:48,894 - ERROR - Error in final model training: too many values to unpack (expected 2)

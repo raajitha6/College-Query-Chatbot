@@ -1,0 +1,209 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good day", "What's up?", "How are you?"],
+      "responses": ["Hello! How can I assist you today?", "Hi there! How can I help you regarding ACE?"]
+    },
+    {
+      "tag": "college_timings",
+      "patterns": ["What are the college timings?", "When does the college start?", "College working hours", "At what time does ACE open and close?", "ACE college schedule"],
+      "responses": ["ACE Engineering College operates from 9:00 AM to 4:30 PM, Monday to Saturday. Timings may vary during exams or holidays."]
+    },
+    {
+      "tag": "courses",
+      "patterns": ["What courses are offered?", "What departments are there?", "List of programs", "Engineering branches available"],
+      "responses": [
+        "ACE offers B.Tech programs in CSE, ECE, EEE, Civil, Mechanical, AI & DS, and AI & ML. You can view the complete brochure here: <a href='https://www.aceec.ac.in/wp-content/uploads/2021/08/COLLEGE-BROCHURE-2021.pdf' target='_blank'>College Brochure</a>."
+      ]
+    },
+    {
+      "tag": "admission",
+      "patterns": ["How can I get admission?", "What is the admission process?", "Admission criteria", "Eligibility for admission"],
+      "responses": [
+        "Admissions are through EAMCET/ECET/ICET depending on the program. For more details, please visit the admissions page: <a href='https://www.aceec.ac.in/admissions/' target='_blank'>ACE Admissions</a>."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": ["What is the fee structure?", "How much are the tuition fees?", "Tell me about college fees"],
+      "responses": [
+        "Fee details vary by program and admission type. Please check the official information here: <a href='https://www.aceec.ac.in/wp-content/uploads/2023/03/02-TS-AFRC-GoMsNo37BEBTECHFEE-2022-23.pdf' target='_blank'>Fee Structure</a>."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["How do I contact ACE?", "College phone number", "Email address", "Contact details"],
+      "responses": [
+        "You can contact ACE Engineering College at +91-8418-288588 or email: <a href='mailto:info@aceec.ac.in'>info@aceec.ac.in</a>. More contact options here: <a href='https://www.aceec.ac.in/contact-us/' target='_blank'>Contact ACE</a>."
+      ]
+    },
+    {
+      "tag": "location",
+      "patterns": ["Where is ACE Engineering College located?", "College address", "Location of the campus"],
+      "responses": [
+        "ACE Engineering College is located at Ankushapur, Ghatkesar Mandal, Hyderabad, Telangana - 501301. View it on the map: <a href='https://goo.gl/maps/Jz9rbXpiSDoTVN7s9' target='_blank'>Google Maps</a>."
+      ]
+    },
+    {
+      "tag": "facilities",
+      "patterns": ["What facilities are available?", "Campus infrastructure", "Hostel, library and labs?"],
+      "responses": [
+        "ACE offers well-equipped labs, a central library, hostels, digital classrooms, sports facilities, and transport services. Learn more here: <a href='https://www.aceec.ac.in/about-college/' target='_blank'>Campus Facilities</a>."
+      ]
+    },
+    {
+      "tag": "placements",
+      "patterns": ["What about placements?", "How are placements in ACE?", "Placement companies", "Highest package"],
+      "responses": [
+        "ACE has a strong placement record with top companies like Infosys, TCS, Wipro, Capgemini, and Tech Mahindra. For detailed info, visit: <a href='https://www.aceec.ac.in/placement-cell/#Welcome-to-Placement-Cell' target='_blank'>Placement Cell</a>."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "See you later", "Exit"],
+      "responses": [
+        "Goodbye! Feel free to ask me anything about ACE anytime.",
+        "See you! Wishing you all the best!"
+      ]
+    },
+    {
+      "tag": "about",
+      "patterns": ["Tell me about ACE", "What is ACE Engineering College?", "About the college"],
+      "responses": [
+        "ACE Engineering College is approved by AICTE and affiliated with JNTUH. It offers excellent engineering education and strong placement support. Visit the official website: <a href='https://www.aceec.ac.in/' target='_blank'>ACE Official Website</a>."
+      ]
+    },
+    {
+      "tag": "college_holidays",
+      "patterns": [
+        "When are the college holidays?",
+        "Does ACE have holidays?",
+        "When does ACE close for holidays?",
+        "What are the college holidays?",
+        "Is there a holiday schedule for ACE?",
+        "Are there any holidays in ACE?",
+        "Tell me about holidays",
+        "Holiday dates",
+        "ACE holidays",
+        "List of holidays",
+        "Holiday details"
+      ],
+      "responses": [
+        "For detailed holiday schedules, please refer to the official <a href='https://www.aceec.ac.in/autonomous-academic-calenders/' target='_blank'>Academic Calendar</a>."
+      ]
+    },
+    {
+      "tag": "transport",
+      "patterns": [
+        "Does ACE have transport facilities?",
+        "Is there a college bus service?",
+        "Bus timings for ACE",
+        "How can I reach ACE by bus?"
+      ],
+      "responses": [
+        "Yes, ACE provides transportation facilities covering major areas around Hyderabad. You can view the latest bus timings here: <a href='https://www.aceec.ac.in/wp-content/uploads/2023/09/College-Bus-Timings-w-e-f-25.09.2023.pdf' target='_blank'>College Bus Timings</a>."
+      ]
+    },
+    {
+      "tag": "hostel",
+      "patterns": [
+        "Is hostel accommodation available?",
+        "Tell me about ACE hostel",
+        "Hostel fees and facilities",
+        "Does ACE have a hostel?"
+      ],
+      "responses": [
+        "Yes, ACE offers separate hostel facilities for male and female students with good amenities. Learn more here: <a href='https://www.aceec.ac.in/hostel-and-auditorium/' target='_blank'>Hostel and Auditorium</a>."
+      ]
+    },
+    {
+      "tag": "scholarships",
+      "patterns": [
+        "Are scholarships available?",
+        "Does ACE offer fee waivers?",
+        "Scholarship details",
+        "How to apply for scholarships at ACE?"
+      ],
+      "responses": [
+        "Eligible students can apply for merit-based scholarships. For complete information, refer to this document: <a href='https://www.aceec.ac.in/wp-content/uploads/2022/07/ACE-Merit-Scholarship-2022.pdf' target='_blank'>ACE Merit Scholarship 2022</a>."
+      ]
+    },
+    {
+      "tag": "exam_info",
+      "patterns": [
+        "When are the exams?",
+        "Exam schedule for ACE",
+        "Internal exams information",
+        "Semester exam dates"
+      ],
+      "responses": [
+        "Exam schedules are updated regularly on the official website. Please refer to the <a href='https://www.aceec.ac.in/examination-time-table/' target='_blank'>Examination Time Tables</a> for details."
+      ]
+    },
+    {
+      "tag": "internships",
+      "patterns": [
+        "Are internships provided?",
+        "Internship opportunities at ACE",
+        "How can I get internships through ACE?",
+        "Internship support"
+      ],
+      "responses": [
+        "ACE assists students with internships in reputed companies. Check out recent internship details here: <a href='https://www.aceec.ac.in/wp-content/uploads/2025/03/ACE-CSE-Student-internships-2025.pdf' target='_blank'>CSE Student Internships 2025</a>."
+      ]
+    },
+    {
+      "tag": "canteen",
+      "patterns": [
+        "Is there a canteen in ACE?",
+        "Food options at college",
+        "Where can I eat on campus?",
+        "ACE canteen details",
+        "Is food available at college?"
+      ],
+      "responses": [
+        "Yes! ACE has a hygienic canteen serving a variety of meals and snacks for students and staff."
+      ]
+    },
+    {
+      "tag": "wifi_availability",
+      "patterns": [
+        "Is Wi-Fi available in the college?",
+        "Internet facilities in ACE",
+        "WiFi on campus",
+        "Do hostels have Wi-Fi?",
+        "Internet access for students"
+      ],
+      "responses": [
+        "Yes, ACE campus and hostels provide Wi-Fi facilities to students for academic purposes."
+      ]
+    },
+    {
+      "tag": "library_timings",
+      "patterns": [
+        "When is the library open?",
+        "Library working hours",
+        "ACE library timings",
+        "Can I access the library in the evening?",
+        "Library schedule"
+      ],
+      "responses": [
+        "The central library at ACE is open from 9:00 AM to 6:00 PM on working days."
+      ]
+    },
+    {
+      "tag": "ragging_policy",
+      "patterns": [
+        "Is ragging allowed?",
+        "What is the anti-ragging policy?",
+        "Ragging rules at ACE",
+        "Safety from ragging",
+        "Is ACE a ragging-free campus?"
+      ],
+      "responses": [
+        "ACE strictly follows a zero-tolerance policy towards ragging. The campus is 100% ragging-free as per UGC regulations."
+      ]
+    }                
+  ]
+}
