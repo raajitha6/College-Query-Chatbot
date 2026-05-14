@@ -4,7 +4,7 @@ import pickle
 import random
 
 # Load trained model and vectorizer
-model=pickle.load(open("chatbot_model.pkl","rb"))
+model= pickle.load(open("chatbot_model.pkl","rb"))
 vectorizer=pickle.load(open("vectorizer.pkl","rb"))
 
 # Load intents
